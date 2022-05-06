@@ -4,6 +4,6 @@
     title: game.title,
     genre: game.genre,
     description: game.description,
-    url: game_url(game, format: :json)
+    url: games_url(game, format: :json)
   }
 end

@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find_by(id: params[:id])
+    @post = Post.find(params[:id])
     @post.title = params[:title] || @post.title
     @post.text = params[:text] || @post.text
     if @post.save
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find_by(id: params[:id])
+    post = Post.find(params[:id])
     post.destroy
     render json: { message: "Post destroyed successfully!" }
   end

@@ -21,12 +21,12 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = Game.find_by(id: params[:id])
+    @game = Game.find(params[:id])
     render template: "games/show"
   end
 
   def update
-    @game = Game.find_by(id: params[:id])
+    @game = Game.find(params[:id])
     @game.title = params[:title] || @game.title
     @game.image_url = params[:image_url] || @game.image_url
     @game.genre = params[:genre] || @game.genre
@@ -39,7 +39,7 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    game = Game.find_by(id: params[:id])
+    game = Game.find(params[:id])
     game.destroy
     render json: { message: "game destroyed successfully!" }
   end

@@ -1,21 +1,22 @@
-@jwt=
+@jwt=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTE5NDY3Nzh9.agOJrRKmdYR6u6peUkkjUSYpIUN16o0f8gslJuePSZk
 
-### posts show
+### posts show ###
 GET http://localhost:3000/posts/1.json
 
-### posts index
+### posts index ###
 GET http://localhost:3000/posts.json
 
-### posts create
+### posts create ###
 POST http://localhost:3000/posts.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
+
 {
   "title": "title",
   "text": "text"
 }
 
-### posts update
+### posts update ###
 PATCH http://localhost:3000/posts/1.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
@@ -23,34 +24,38 @@ Content-Type: application/json
 
 }
 
-### posts destroy
+### posts destroy ###
 DELETE http://localhost:3000/posts/1.json
 Authorization: Bearer {{jwt}}
 
-### games show
+### games show ###
 GET http://localhost:3000/games/1.json
 
-### games index
+### games index ###
 GET http://localhost:3000/games.json
 
-### games create
+### games create ###
 POST http://localhost:3000/games.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
+
 {
   "title": "title",
-  "text": "text"
+  "genre": "genre",
+  "description": "description",
+  "image_url": "image"
 }
 
-### games update
+### games update ###
 PATCH http://localhost:3000/games/1.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
-{
 
+{
+  "title": "new title"
 }
 
-### games destroy
+### games destroy ###
 DELETE http://localhost:3000/games/1.json
 Authorization: Bearer {{jwt}}
 
@@ -63,7 +68,7 @@ Content-Type: application/json
   "password": "password"
 }
 
-### USERS CREATE (signup)
+### USERS CREATE (signup) ###
 POST http://localhost:3000/users.json
 Content-Type: application/json
 
@@ -73,3 +78,6 @@ Content-Type: application/json
   "password": "password",
   "password_confirmation": "password"
 }
+
+### users show ###
+GET http://localhost:3000/users/1.json
