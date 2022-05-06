@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_admin
+  before_action :authenticate_user, except: [:index, :show]
+  
   def index
     @posts = Post.all
     render template: "posts/index"
@@ -8,8 +9,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(
       title: params[:title],
-      text: params[:text],
-      description: params[:description],
+      text: params[:text]
     )
     if @post.save
       render :show # Same as => `render template: "posts/show"`
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(id: params[:id])
+    @post = Post.find(params[:id])
     render template: "posts/show"
   end
 

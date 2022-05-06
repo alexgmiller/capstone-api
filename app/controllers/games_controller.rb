@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
-  before_action :authenticate_admin
+  before_action :authenticate_user, except: [:index, :show]  
+  
   def index
     @games = Game.all
     render template: "games/index"
