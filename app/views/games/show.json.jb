@@ -1,0 +1,8 @@
+{
+  id: @game.id,
+  title: @game.title,
+  genre: @game.genre,
+  description: @game.description,
+  created_at: @game.created_at,
+  updated_at: @game.updated_at
+}

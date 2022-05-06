@@ -1,0 +1,78 @@
+@jwt=
+
+### posts show
+GET http://localhost:3000/posts/1.json
+
+### posts index
+GET http://localhost:3000/posts.json
+
+### posts create
+POST http://localhost:3000/posts.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+{
+  "title": "title",
+  "text": "text"
+}
+
+### posts update
+PATCH http://localhost:3000/posts/1.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+{
+
+}
+
+### posts destroy
+DELETE http://localhost:3000/posts/1.json
+Authorization: Bearer {{jwt}}
+
+### games show
+GET http://localhost:3000/games/1.json
+
+### games index
+GET http://localhost:3000/games.json
+
+### games create
+POST http://localhost:3000/games.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+{
+  "title": "title",
+  "text": "text"
+}
+
+### games update
+PATCH http://localhost:3000/games/1.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+{
+
+}
+
+### games destroy
+DELETE http://localhost:3000/games/1.json
+Authorization: Bearer {{jwt}}
+
+### SESSION CREATE (login) ###
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+
+  "email": "test@test.com",
+  "password": "password"
+}
+
+### USERS CREATE (signup)
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+
+  "first_name": "first",
+  "last_name": "last",
+  "email": "test@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}

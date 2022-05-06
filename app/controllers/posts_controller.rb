@@ -7,9 +7,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(
-      name: params[:name],
-      price: params[:price],
-      # image_url: params[:image_url],
+      title: params[:title],
+      text: params[:text],
       description: params[:description],
     )
     if @post.save
@@ -26,10 +25,8 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find_by(id: params[:id])
-    @post.name = params[:name] || @post.name
-    @post.price = params[:price] || @post.price
-    # @post.image_url = params[:image_url] || @post.image_url
-    @post.description = params[:description] || @post.description
+    @post.title = params[:title] || @post.title
+    @post.text = params[:text] || @post.text
     if @post.save
       render :show # Same as => `render template: "posts/show"`
     else
