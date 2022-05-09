@@ -1,6 +1,8 @@
 @posts.map do |post|
   {
     id: post.id,
+    user_id: post.user_id,
+    game_id: post.game_id,
     title: post.title,
     text: post.text,
     url: posts_url(post, format: :json)

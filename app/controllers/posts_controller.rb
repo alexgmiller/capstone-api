@@ -9,10 +9,12 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(
       title: params[:title],
-      text: params[:text]
+      text: params[:text],
+      user_id: current_user.id,
+      game_id: params[:game_id]
     )
     if @post.save
-      render :show # Same as => `render template: "posts/show"`
+      render template: "posts/show"
     else
       render json: {errors: @post.errors.full_messages}, status: 422
     end
@@ -27,8 +29,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.title = params[:title] || @post.title
     @post.text = params[:text] || @post.text
+    @post.game_id = params[:game_id] || @post.game_id
+    @post.user_id = current_user.id
     if @post.save
-      render :show # Same as => `render template: "posts/show"`
+      render template: "posts/show"
     else
       render json: {errors: @post.errors.full_messages}, status: 422
     end

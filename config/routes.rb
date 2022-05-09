@@ -14,5 +14,5 @@ get "/posts" => "posts#index"
 get "posts/:id" => "posts#show"
 post "/posts" => "posts#create"
 delete "/posts/:id" => "posts#destroy"
-patch "/posts:id" => "posts#update"
+patch "/posts/:id" => "posts#update"
 end

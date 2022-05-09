@@ -22,4 +22,7 @@ class ApplicationController < ActionController::API
       render json: {}, status: :unauthorized
     end
   end
+  def current_game
+
+  end
 end
