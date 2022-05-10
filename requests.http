@@ -1,4 +1,4 @@
-@jwt=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwiZXhwIjoxNjUyMjA3ODYwfQ.tGkNKUQRwOOlsWJbgJctAtb-VltuVoEvC196alEiJHg
+@jwt=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwiZXhwIjoxNjUyMjg4MzYyfQ.3a_oOwBLZdKaxchW5RgiFesCBgwJ_RwnTJRKTJQkk2M
 
 ### posts show ###
 GET http://localhost:3000/posts/3.json
@@ -12,22 +12,22 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "title": "Fun",
+  "title": "Cool",
   "text": "This is a fun game!",
   "game_id": 5
 }
 
 ### posts update ###
-PATCH http://localhost:3000/posts/3.json
+PATCH http://localhost:3000/posts/6.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
- "title": "Nice",
+ "title": "Nice"
 }
 
 ### posts destroy ###
-DELETE http://localhost:3000/posts/4.json
+DELETE http://localhost:3000/posts/6.json
 Authorization: Bearer {{jwt}}
 
 ### games show ###
@@ -49,16 +49,17 @@ Content-Type: application/json
 }
 
 ### games update ###
-PATCH http://localhost:3000/games/4.json
+PATCH http://localhost:3000/games/17.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "title": "new title"
+  "title": "General",
+  "genre": "Genereal"
 }
 
 ### games destroy ###
-DELETE http://localhost:3000/games/4.json
+DELETE http://localhost:3000/games/17.json
 Authorization: Bearer {{jwt}}
 
 ### SESSION CREATE (login) ###
@@ -66,7 +67,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "alex@test.com",
+  "email": "luna@test.com",
   "password": "password"
 }
 
@@ -75,8 +76,8 @@ POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-  "username": "alex",
-  "email": "alex@test.com",
+  "username": "luna",
+  "email": "luna@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
